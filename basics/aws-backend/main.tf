@@ -5,7 +5,7 @@ terraform {
   ## TO SWITCH FROM LOCAL BACKEND TO REMOTE AWS BACKEND
   #############################################################
   backend "s3" {
-    bucket         = "himan-tf-state" # REPLACE WITH YOUR BUCKET NAME
+    bucket         = "himan-tf-state"
     key            = "03-basics/import-bootstrap/terraform.tfstate"
     region         = "ap-south-1"
     dynamodb_table = "terraform-state-locking"
@@ -25,7 +25,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket        = "himan-tf-state" # REPLACE WITH YOUR BUCKET NAME
+  bucket        = "himan-tf-state"
   force_destroy = true
 }
 
