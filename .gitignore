@@ -1,0 +1,11 @@
+# Terraform specific
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+.terraform.lock.hcl
+terraform.rc
+.terraformignore
+
+# Custom backup files (if any)
+*.tfstate.backup
