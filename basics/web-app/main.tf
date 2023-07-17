@@ -1,6 +1,6 @@
 terraform {
   # Assumes s3 bucket and dynamo DB table already set up
-  # See /code/03-basics/aws-backend
+
   backend "s3" {
     bucket         = "himan-tf-state"
     key            = "03-basics/web-app/terraform.tfstate"
