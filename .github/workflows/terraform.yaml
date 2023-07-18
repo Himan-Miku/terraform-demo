@@ -1,9 +1,9 @@
 name: "Terraform"
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   release:
     types: [published]
   pull_request:
@@ -104,7 +104,7 @@ jobs:
 
       - name: Terraform Apply Production
         if: steps.check-tag.outputs.environment == 'production' && github.event_name == 'release'
-        working-directory: mutli-environment/file-structure/production
+        working-directory: multi-environment/file-structure/production
         run: |
           terraform init
           terraform apply -var db_password=${{secrets.DB_PASSWORD }} -auto-approve
