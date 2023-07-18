@@ -4,6 +4,18 @@ variable "region" {
   default     = "ap-south-1"
 }
 
+variable "app_name" {
+  description = "Name of the web application"
+  type        = string
+  default     = "web-app"
+}
+
+variable "environment_name" {
+  description = "Deployment environment (dev/staging/production)"
+  type        = string
+  default     = "dev"
+}
+
 variable "ami" {
   description = "AMI ID"
   type        = string
