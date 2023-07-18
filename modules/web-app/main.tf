@@ -27,11 +27,11 @@ variable "db_pass_1" {
   sensitive   = true
 }
 
-variable "db_pass_2" {
-  description = "password for database #2"
-  type        = string
-  sensitive   = true
-}
+# variable "db_pass_2" {
+#   description = "password for database #2"
+#   type        = string
+#   sensitive   = true
+# }
 
 module "web_app_1" {
   source = "../web-app-module"
@@ -42,19 +42,19 @@ module "web_app_1" {
   environment_name = "production"
   instance_type    = "t2.micro"
   db_name          = "webapp1db"
-  db_user          = "foo1"
-  db_pass          = var.db_pass_1
+  db_username      = "foo1"
+  db_password      = var.db_pass_1
 }
 
-module "web_app_1" {
-  source = "../web-app-module"
+# module "web_app_1" {
+#   source = "../web-app-module"
 
-  # Input Variables
-  bucket_prefix    = "web-app-2-data"
-  app_name         = "web-app-2"
-  environment_name = "production"
-  instance_type    = "t2.micro"
-  db_name          = "webapp2db"
-  db_user          = "foo2"
-  db_pass          = var.db_pass_2
-}
+#   # Input Variables
+#   bucket_prefix    = "web-app-2-data"
+#   app_name         = "web-app-2"
+#   environment_name = "production"
+#   instance_type    = "t2.micro"
+#   db_name          = "webapp2db"
+#   db_username      = "foo2"
+#   db_password      = var.db_pass_2
+# }
