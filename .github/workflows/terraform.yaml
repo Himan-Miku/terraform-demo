@@ -1,10 +1,9 @@
 name: "Terraform"
 
 on:
-  # Uncomment to enable staging deploy from main
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
   release:
     types: [published]
   pull_request:
@@ -40,7 +39,6 @@ jobs:
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'pull_request'
-        # Route 53 zone must already exist for this to succeed!
         run: terraform plan -var db_password=${{secrets.DB_PASSWORD }} -no-color
         continue-on-error: true
 
