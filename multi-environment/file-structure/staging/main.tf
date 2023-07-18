@@ -39,5 +39,5 @@ module "web_app" {
   instance_type    = "t2.micro"
   db_name          = "${local.environment_name}mydb"
   db_username      = "foo"
-  db_password      = var.db_pass
+  db_password      = var.db_password
 }
